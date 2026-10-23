@@ -204,7 +204,7 @@
     }
     .icono { font-size: 1.1rem; }
 
-    /* ===== REDES SOCIALES — ACOMODO MEJORADO ===== */
+    /* ===== REDES SOCIALES — Iconos oficiales del mismo tamaño ===== */
     .redes {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -215,7 +215,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
+      gap: 0.45rem;
       padding: 0.85rem 0.6rem;
       border-radius: 10px;
       text-decoration: none;
@@ -229,14 +229,21 @@
     .red-facebook { background: var(--fb); }
     .red-instagram { background: var(--ig); }
     .red-tiktok { background: var(--tiktok); }
-    .red-icon { font-size: 1.1rem; line-height: 1; }
+    
+    /* Iconos del mismo tamaño exacto */
+    .red-icon-imagen {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+    }
 
     /* BOTONES PRINCIPALES */
     .botones-accion {
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
-      margin-top: 1.2rem;
+      margin-top: 1.5rem;
     }
     .boton {
       display: flex;
@@ -515,9 +522,9 @@
           <li>Martes y Jueves</li>
         </ul>
         <div class="mod-precio" style="margin-top: 0.8rem;">
-          <div class="precio-regular">Precio regular: $7,154.00</div>
+          <div class="precio-regular">Precio regular: $7,220.00</div>
           <div class="descuento-etq">-20%</div>
-          <div class="precio-final">Precio final: $5,723.02</div>
+          <div class="precio-final">Precio final: $5,776.00</div>
         </div>
       </div>
     </section>
@@ -570,13 +577,16 @@
           <h3 style="font-size: 0.95rem; margin-bottom: 0.6rem; text-align: center;">🌐 Síguenos en redes</h3>
           <div class="redes">
             <a href="https://www.facebook.com/share/1Gg4yGM2ht/" target="_blank" class="red red-facebook">
-              <span class="red-icon">f</span> Facebook
+              <img src="icono-facebook.png" alt="Facebook" class="red-icon-imagen">
+              Facebook
             </a>
             <a href="https://www.instagram.com/plxuniversidad?exln=MTM4dnpqZngydjZ5Mg==" target="_blank" class="red red-instagram">
-              <span class="red-icon">📷</span> Instagram
+              <img src="icono-instagram.png" alt="Instagram" class="red-icon-imagen">
+              Instagram
             </a>
             <a href="https://vm.tiktok.com/ZS9UKbKsrbMgc-YczZE/" target="_blank" class="red red-tiktok">
-              <span class="red-icon">♪</span> TikTok
+              <img src="icono-tiktok.png" alt="TikTok" class="red-icon-imagen">
+              TikTok
             </a>
           </div>
         </div>
