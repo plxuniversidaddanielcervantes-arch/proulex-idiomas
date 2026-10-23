@@ -27,8 +27,12 @@
       --sombra-hover: 0 8px 24px rgba(36, 69, 111, 0.12);
       --radio: 12px;
       --transicion: all 0.25s ease;
+      /* Colores oficiales de redes */
+      --fb: #1877F2;
+      --ig: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+      --tiktok: #000000;
+      --wa: #25D366;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
@@ -37,7 +41,6 @@
       line-height: 1.5;
       padding-bottom: 4rem;
     }
-
     /* CABECERA con espacio para logo */
     .cabecera {
       background: linear-gradient(135deg, var(--violeta), var(--azul-oscuro));
@@ -53,13 +56,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px dashed rgba(255,255,255,0.4);
       border-radius: 50%;
+      overflow: hidden;
       background: rgba(255,255,255,0.08);
     }
-    .logo-texto {
-      font-size: 0.8rem;
-      opacity: 0.7;
+    .logo-espacio img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
     .cabecera h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.3rem; }
     .cabecera p { opacity: 0.9; font-size: 0.95rem; }
@@ -71,9 +75,7 @@
       font-size: 0.8rem;
       margin-top: 0.9rem;
     }
-
     .contenedor { max-width: 420px; margin: 0 auto; padding: 0 1rem; }
-
     /* SECCIONES */
     .seccion { margin-top: 2rem; }
     .encabezado {
@@ -92,7 +94,6 @@
       height: 2px;
       background: linear-gradient(90deg, var(--azul-brillante), transparent);
     }
-
     /* TARJETAS */
     .tarjeta {
       background: var(--blanco);
@@ -128,7 +129,6 @@
       margin-bottom: 0.9rem;
       line-height: 1.4;
     }
-
     /* PRECIOS */
     .mod-precio {
       background: var(--fondo);
@@ -162,7 +162,6 @@
       color: var(--azul-oscuro);
       font-size: 1rem;
     }
-
     .etiqueta {
       display: inline-flex;
       align-items: center;
@@ -175,11 +174,10 @@
       font-weight: 600;
       margin: 0.3rem 0.3rem 0 0;
     }
-
     .bloque {
       background: linear-gradient(135deg, #E9F1F8, #F0F4F8);
       border-radius: var(--radio);
-      padding: 1.2rem;
+      padding: 1.5rem;
       margin-top: 0.8rem;
     }
     .bloque h3 {
@@ -197,7 +195,6 @@
       font-size: 0.88rem;
     }
     .destacado { font-weight: 600; color: var(--violeta); }
-
     .fila-telefono {
       display: flex;
       align-items: center;
@@ -206,58 +203,68 @@
       font-size: 0.9rem;
     }
     .icono { font-size: 1.1rem; }
+
+    /* ===== REDES SOCIALES — ACOMODO MEJORADO ===== */
     .redes {
-      display: flex;
-      gap: 0.8rem;
-      margin-top: 0.8rem;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
     }
     .red {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.4rem;
-      background: var(--blanco);
-      padding: 0.6rem 0.9rem;
-      border-radius: 8px;
+      padding: 0.85rem 0.6rem;
+      border-radius: 10px;
       text-decoration: none;
-      color: var(--azul-profundo);
       font-weight: 600;
       font-size: 0.85rem;
-      box-shadow: 0 2px 6px rgba(36,69,111,0.06);
       transition: var(--transicion);
+      color: white;
+      text-align: center;
     }
-    .red:hover { transform: translateY(-2px); }
+    .red:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+    .red-facebook { background: var(--fb); }
+    .red-instagram { background: var(--ig); }
+    .red-tiktok { background: var(--tiktok); }
+    .red-icon { font-size: 1.1rem; line-height: 1; }
 
+    /* BOTONES PRINCIPALES */
+    .botones-accion {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
     .boton {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
       text-decoration: none;
-      padding: 0.9rem;
+      padding: 0.95rem;
       border-radius: var(--radio);
       font-weight: 700;
-      margin-top: 0.9rem;
       transition: var(--transicion);
       font-size: 0.95rem;
+      width: 100%;
+    }
+    .boton:hover { transform: translateY(-2px); }
+    .boton-whatsapp {
+      background: var(--wa);
+      color: white;
     }
     .boton-principal {
       background: linear-gradient(135deg, var(--azul-oscuro), var(--violeta));
       color: white;
     }
-    .boton-principal:hover { transform: translateY(-2px); }
-    .boton-whatsapp {
-      background: #25D366;
-      color: white;
-    }
-    .boton-whatsapp:hover { background: #1DA854; transform: translateY(-2px); }
     .boton-secundario {
       background: var(--blanco);
       color: var(--azul-oscuro);
       border: 2px solid var(--azul-brillante);
     }
-    .boton-secundario:hover { background: #F0F7FF; }
-
     .pie {
       text-align: center;
       margin-top: 2.5rem;
@@ -275,19 +282,15 @@
   </style>
 </head>
 <body>
-
   <header class="cabecera">
-  <!-- Espacio para logo en lugar del círculo -->
-  <div class="logo-espacio">
-    <img src="logo-proulex.png" alt="PROULEX Universidad" style="width:100%;height:100%;object-fit:contain;">
-  </div>
-  <h1>PROULEX Universidad</h1>
-  <p>Centro de Idiomas — Universidad de Guadalajara</p>
-  <div class="etiqueta-mcer">✦ Alineados al Marco Común Europeo de Referencia (MCER)</div>
-</header>
-
+    <div class="logo-espacio">
+      <img src="logo-proulex.png" alt="PROULEX Universidad">
+    </div>
+    <h1>PROULEX Universidad</h1>
+    <p>Centro de Idiomas — Universidad de Guadalajara</p>
+    <div class="etiqueta-mcer">✦ Alineados al Marco Común Europeo de Referencia (MCER)</div>
+  </header>
   <main class="contenedor">
-
     <!-- PRESENTACIÓN -->
     <section class="seccion">
       <div class="encabezado">
@@ -298,117 +301,100 @@
         Conoce nuestra oferta educativa 2026. Programas certificados, metodología innovadora y formación de calidad en Guadalajara.
       </p>
     </section>
-
     <!-- PROGRAMAS -->
     <section class="seccion">
       <div class="encabezado">
         <h2>📚 Nuestros Programas</h2>
         <div class="linea"></div>
       </div>
-
       <!-- PDU -->
       <div class="tarjeta">
         <span class="etiqueta-nivel">A1 – B1 · 12 niveles</span>
         <h3>🎓 PDU — Diploma Universitario</h3>
         <p class="descripcion">Inglés para el ámbito personal y profesional.</p>
-
         <div class="mod-precio">
           <div class="mod-nombre">Intensivo · Lunes a Viernes · Mensual</div>
           <div class="precio-regular">Precio regular: $3,577.00</div>
           <div class="descuento-etq">-20%</div>
           <div class="precio-final">Precio final: $2,861.60/mes</div>
         </div>
-
         <div class="mod-precio">
           <div class="mod-nombre">Sabatino · Bimestral</div>
           <div class="precio-regular">Precio regular: $4,180.00</div>
           <div class="descuento-etq">-15%</div>
           <div class="precio-final">Precio final: $3,553.00</div>
         </div>
-
         <div class="mod-precio">
           <div class="mod-nombre">Semi C · Martes y Jueves · 2 meses y medio</div>
           <div class="precio-regular">Precio regular: $3,965.00</div>
           <div class="descuento-etq">-15%</div>
           <div class="precio-final">Precio final: $3,370.25</div>
         </div>
-
         <div style="margin-top: 0.6rem;">
           <span class="etiqueta">Material incluido</span>
           <span class="etiqueta">Diploma</span>
           <span class="etiqueta">Certificación Euroexam B1</span>
         </div>
       </div>
-
       <!-- PC -->
       <div class="tarjeta">
         <span class="etiqueta-nivel">B1 – B2 · 4 niveles</span>
         <h3>📘 PC — Certificado de Inglés</h3>
         <p class="descripcion">Domina el inglés en situaciones complejas.</p>
-
         <div class="mod-precio">
           <div class="mod-nombre">Intensivo · Lunes a Viernes · Mensual</div>
           <div class="precio-regular">Precio regular: $3,753.00</div>
           <div class="descuento-etq">-20%</div>
           <div class="precio-final">Precio final: $3,002.40/mes</div>
         </div>
-
         <div class="mod-precio">
           <div class="mod-nombre">Sabatino · Bimestral</div>
           <div class="precio-regular">Precio regular: $4,384.00</div>
           <div class="descuento-etq">-15%</div>
           <div class="precio-final">Precio final: $3,726.40</div>
         </div>
-
         <div class="mod-precio">
           <div class="mod-nombre">Semi-intensivo · 2 meses y medio</div>
           <div class="precio-regular">Precio regular: $4,167.00</div>
           <div class="descuento-etq">-15%</div>
           <div class="precio-final">Precio final: $3,541.95</div>
         </div>
-
         <div style="margin-top: 0.6rem;">
           <span class="etiqueta">Material incluido</span>
           <span class="etiqueta">Diploma</span>
           <span class="etiqueta">Certificación EPT</span>
         </div>
       </div>
-
       <!-- PCA -->
       <div class="tarjeta">
         <span class="etiqueta-nivel">B2 – C1 · 4 niveles</span>
         <h3>🚀 PCA — Certificado Avanzado</h3>
         <p class="descripcion">Comunica con confianza en cualquier entorno.</p>
-
         <div class="mod-precio">
           <div class="mod-nombre">Intensivo · Lunes a Viernes · Mensual</div>
           <div class="precio-regular">Precio regular: $3,851.00</div>
           <div class="descuento-etq">-20%</div>
           <div class="precio-final">Precio final: $3,080.80/mes</div>
         </div>
-
         <div class="mod-precio">
           <div class="mod-nombre">Sabatino · Bimestral</div>
           <div class="precio-regular">Precio regular: $4,511.00</div>
           <div class="descuento-etq">-15%</div>
           <div class="precio-final">Precio final: $3,834.35</div>
         </div>
-
         <div class="mod-precio">
           <div class="mod-nombre">Semi-intensivo · 2 meses y medio</div>
           <div class="precio-regular">Precio regular: $4,267.00</div>
           <div class="descuento-etq">-15%</div>
           <div class="precio-final">Precio final: $3,626.95</div>
         </div>
-
         <div style="margin-top: 0.6rem;">
           <span class="etiqueta">Material incluido</span>
           <span class="etiqueta">Diploma</span>
           <span class="etiqueta">Certificación TOEFL ITP</span>
         </div>
       </div>
-
-      <!-- PBEi y PBEa — agrupados con niveles -->
+      <!-- PBEi y PBEa -->
       <div class="tarjeta">
         <span class="etiqueta-nivel">B1–B2 / B2–C1</span>
         <h3>💼 PBEi · PBEa — Business English</h3>
@@ -417,53 +403,45 @@
           <strong>PBEi:</strong> 4 niveles · <strong>PBEa:</strong> 4 niveles<br>
           Ambos comparten los mismos precios:
         </p>
-
         <div class="mod-precio">
           <div class="mod-nombre">Intensivo</div>
           <div class="precio-regular">Precio regular: $3,928.00</div>
           <div class="descuento-etq">-20%</div>
           <div class="precio-final">Precio final: $3,142.40/mes</div>
         </div>
-
         <div class="mod-precio">
           <div class="mod-nombre">Sabatino</div>
           <div class="precio-regular">Precio regular: $4,588.00</div>
           <div class="descuento-etq">-15%</div>
           <div class="precio-final">Precio final: $3,899.80</div>
         </div>
-
         <div style="margin-top: 0.6rem;">
           <span class="etiqueta">Material incluido</span>
           <span class="etiqueta">Diploma</span>
         </div>
       </div>
-
       <!-- PTC - TOEFL -->
       <div class="tarjeta">
         <span class="etiqueta-nivel">B1 · 3 niveles</span>
         <h3>📝 PTC — TOEFL Preparation Course</h3>
         <p class="descripcion">Estrategias para obtener el puntaje deseado.</p>
-
         <div class="mod-precio">
           <div class="mod-nombre">Intensivo</div>
           <div class="precio-regular">Precio regular: $4,828.00</div>
           <div class="descuento-etq">-20%</div>
           <div class="precio-final">Precio final: $3,862.40/mes</div>
         </div>
-
         <div class="mod-precio">
           <div class="mod-nombre">Sabatino</div>
           <div class="precio-regular">Precio regular: $5,633.00</div>
           <div class="descuento-etq">-15%</div>
           <div class="precio-final">Precio final: $4,788.05</div>
         </div>
-
         <div style="margin-top: 0.6rem;">
           <span class="etiqueta">Material incluido</span>
           <span class="etiqueta">Diploma</span>
         </div>
       </div>
-
       <!-- PETTD -->
       <div class="tarjeta">
         <span class="etiqueta-nivel">Formación Docente · Nivel B2+</span>
@@ -471,12 +449,10 @@
         <p class="descripcion">
           Diplomado en la enseñanza del inglés como lengua extranjera.
         </p>
-
         <div class="mod-precio">
           <div class="mod-nombre">Días de clase: Lunes, Martes, Jueves y Viernes</div>
           <div class="precio-final" style="margin-top: 0.5rem;">Costo total del programa: $28,832.00</div>
         </div>
-
         <div class="bloque" style="margin-top: 0.9rem;">
           <h3>Requisitos de admisión</h3>
           <ul class="lista">
@@ -488,7 +464,6 @@
         </div>
       </div>
     </section>
-
     <!-- EXÁMENES DE UBICACIÓN -->
     <section class="seccion">
       <div class="encabezado">
@@ -497,7 +472,6 @@
       </div>
       <div class="bloque">
         <p style="color: var(--texto-oscuro); font-weight: 500;">Si ya sabes inglés y quieres conocer tu nivel antes de inscribirte, toma nuestro examen de ubicación.</p>
-
         <div style="margin-top: 1rem;">
           <p style="color: var(--texto-oscuro); font-weight: 600;">Examen Básico (PDU): <span style="color: var(--azul-oscuro);">$124 MXN</span></p>
           <p style="color: var(--texto-oscuro); font-weight: 600; margin-top: 0.5rem;">Examen Avanzado (PC / PCA): <span style="color: var(--azul-oscuro);">$260 MXN</span></p>
@@ -505,7 +479,6 @@
         <p class="nota" style="margin-top: 0.8rem;">Agenda tu cita con anticipación en recepción.</p>
       </div>
     </section>
-
     <!-- DESCUENTOS -->
     <section class="seccion">
       <div class="encabezado">
@@ -527,7 +500,6 @@
         <p class="leyenda">Aplican restricciones.</p>
       </div>
     </section>
-
     <!-- JUBILADOS -->
     <section class="seccion">
       <div class="encabezado">
@@ -549,7 +521,6 @@
         </div>
       </div>
     </section>
-
     <!-- HORARIOS -->
     <section class="seccion">
       <div class="encabezado">
@@ -565,7 +536,6 @@
         </p>
       </div>
     </section>
-
     <!-- CONTACTO -->
     <section class="seccion">
       <div class="encabezado">
@@ -574,7 +544,6 @@
       </div>
       <div class="bloque">
         <p><strong>Dirección:</strong><br>Av. Vallarta 1043, Col. Americana<br>Guadalajara, Jalisco</p>
-
         <div style="margin-top: 1rem;">
           <h3 style="font-size: 0.9rem;">📞 Teléfonos de la sede</h3>
           <div class="fila-telefono">
@@ -586,7 +555,6 @@
             <a href="tel:+523338267910" style="color: inherit; text-decoration: none;">33 3826 7910</a>
           </div>
         </div>
-
         <div style="margin-top: 1rem;">
           <h3 style="font-size: 0.9rem;">💬 WhatsApp</h3>
           <div class="fila-telefono">
@@ -598,41 +566,38 @@
             <a href="https://wa.me/523320284279" target="_blank" style="color: inherit; text-decoration: none;">33 2028 4279</a>
           </div>
         </div>
-
-        <div style="margin-top: 1rem;">
-          <h3 style="font-size: 0.9rem;">🌐 Síguenos</h3>
+        <div style="margin-top: 1.2rem;">
+          <h3 style="font-size: 0.95rem; margin-bottom: 0.6rem; text-align: center;">🌐 Síguenos en redes</h3>
           <div class="redes">
-            <a href="https://facebook.com/proulex" target="_blank" class="red">
-              <span>📘</span> Facebook
+            <a href="https://www.facebook.com/share/1Gg4yGM2ht/" target="_blank" class="red red-facebook">
+              <span class="red-icon">f</span> Facebook
             </a>
-            <a href="https://instagram.com/proulex" target="_blank" class="red">
-              <span>📸</span> Instagram
+            <a href="https://www.instagram.com/plxuniversidad?exln=MTM4dnpqZngydjZ5Mg==" target="_blank" class="red red-instagram">
+              <span class="red-icon">📷</span> Instagram
             </a>
-            <a href="https://tiktok.com/@proulex" target="_blank" class="red">
-              <span>🎵</span> TikTok
+            <a href="https://vm.tiktok.com/ZS9UKbKsrbMgc-YczZE/" target="_blank" class="red red-tiktok">
+              <span class="red-icon">♪</span> TikTok
             </a>
           </div>
         </div>
       </div>
-
-      <a href="https://wa.me/523318942459" target="_blank" class="boton boton-whatsapp">
-        💬 Enviar por WhatsApp
-      </a>
-      <a href="tel:+523338263221" class="boton boton-principal">
-        📞 Llamar ahora
-      </a>
-      <a href="https://www.google.com/maps/search/?api=1&query=Av.+Vallarta+1043+Col.+Americana+Guadalajara+Jalisco" target="_blank" class="boton boton-secundario">
-        🗺️ Ver ubicación
-      </a>
+      <div class="botones-accion">
+        <a href="https://wa.me/523318942459" target="_blank" class="boton boton-whatsapp">
+          💬 Enviar por WhatsApp
+        </a>
+        <a href="tel:+523338263221" class="boton boton-principal">
+          📞 Llamar ahora
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+Vallarta+1043+Col.+Americana+Guadalajara+Jalisco" target="_blank" class="boton boton-secundario">
+          🗺️ Ver ubicación
+        </a>
+      </div>
     </section>
-
   </main>
-
   <footer class="pie">
     <p>© 2026 PROULEX Universidad — Universidad de Guadalajara</p>
     <p style="margin-top: 0.3rem;">Todos los programas incluyen material y diploma de horas completas.</p>
     <p style="margin-top: 0.3rem;">MCER = Marco Común Europeo de Referencia para las Lenguas</p>
   </footer>
-
 </body>
 </html>
